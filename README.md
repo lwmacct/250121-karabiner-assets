@@ -1,4 +1,5 @@
 # 推荐阅读
+- 代码仓库 https://github.com/lwmacct/250121-karabiner-assets
 - 语雀文档 https://www.yuque.com/lwmacct/macos/karabiner
 - 下载安装 https://karabiner-elements.pqrs.org/
 
