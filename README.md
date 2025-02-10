@@ -2,6 +2,7 @@
 - 代码仓库 https://github.com/lwmacct/250121-karabiner-assets
 - 语雀文档 https://www.yuque.com/lwmacct/macos/karabiner
 - 下载安装 https://karabiner-elements.pqrs.org/
+- win平替 https://github.com/moshuying/myAHK
 
 # 使用示例
 - macos 打开终端直接执行 (需要先安装 git)
