@@ -4,6 +4,7 @@
 - 下载安装 https://karabiner-elements.pqrs.org/
 
 # 使用示例
+- macos 打开终端直接执行 (需要先安装 git)
 ```bash
 #!/usr/bin/env bash
 
@@ -17,3 +18,4 @@ __main() {
 __main
 
 ```
+
