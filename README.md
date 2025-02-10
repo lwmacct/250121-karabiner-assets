@@ -1,5 +1,8 @@
-## 语雀文档 [Karabiner-Elements](https://www.yuque.com/lwmacct/macos/karabiner)
+# 推荐阅读
+- 语雀文档 https://www.yuque.com/lwmacct/macos/karabiner
+- 下载安装 https://karabiner-elements.pqrs.org/
 
+# 使用示例
 ```bash
 #!/usr/bin/env bash
 
