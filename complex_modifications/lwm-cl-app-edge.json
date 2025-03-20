@@ -1,0 +1,65 @@
+{
+  "title": "lwm-cl-app-edge",
+  "rules": [
+    {
+      "description": "lwm-cl-app-edge ~ 切换标签页",
+      "manipulators": [
+        {
+          "description": "下一个",
+          "type": "basic",
+          "from": {
+            "key_code": "period",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "上一个",
+          "type": "basic",
+          "from": {
+            "key_code": "comma",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_control",
+                "left_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

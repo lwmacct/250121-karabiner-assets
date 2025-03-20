@@ -1,0 +1,88 @@
+{
+  "title": "lwm-caps_lock-按键映射",
+  "rules": [
+    {
+      "description": "lwm-caps_lock-按键映射",
+      "manipulators": [
+        {
+          "description": "cl+m (第一个快捷键)",
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": [
+                "left_control",
+                "left_option"
+              ]
+            },
+            {
+              "set_variable": {
+                "name": "lwm_cl_m_toggle",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_cl_m_toggle",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "description": "cl+m (第二个快捷键)",
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "p",
+              "modifiers": [
+                "left_control",
+                "left_option"
+              ]
+            },
+            {
+              "set_variable": {
+                "name": "lwm_cl_m_toggle",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_cl_m_toggle",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "title": "lwm-caps_lock-光标定位",
+  "rules": [
+    {
+      "description": "lwm-caps_lock-光标定位 必须导入这个",
+      "manipulators": [
+        {
+          "description": "启动模式",
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250,
+            "basic.to_if_held_down_threshold_milliseconds": 1
+          },
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "lwm_caps_lock_mode",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "lwm_caps_lock_mode",
+                "value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "caps_lock",
+              "lazy": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "lwm-caps_lock-光标定位 [ikjl] 上下左右",
+      "manipulators": [
+        {
+          "description": "方向键上",
+          "type": "basic",
+          "from": {
+            "key_code": "i",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "方向键下",
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "方向键左",
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "方向键右",
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "lwm-caps_lock-光标定位 [hn] 行首行尾",
+      "manipulators": [
+        {
+          "description": "移动到行首",
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "移动到行尾",
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "lwm-caps_lock-光标定位 [uo] 左右选中",
+      "manipulators": [
+        {
+          "description": "向左选中",
+          "type": "basic",
+          "from": {
+            "key_code": "u",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "向右选中",
+          "type": "basic",
+          "from": {
+            "key_code": "o",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "left_shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
