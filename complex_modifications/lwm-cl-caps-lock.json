@@ -1,0 +1,46 @@
+{
+  "title": "lwm-cl-caps-lock",
+  "rules": [
+    {
+      "description": "lwm-cl-caps-lock ~ 必须导入这个",
+      "manipulators": [
+        {
+          "description": "启动模式",
+          "type": "basic",
+          "from": {
+            "key_code": "caps_lock",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250,
+            "basic.to_if_held_down_threshold_milliseconds": 1
+          },
+          "to_if_held_down": [
+            {
+              "set_variable": {
+                "name": "lwm_cl_mode",
+                "value": 1
+              }
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "lwm_cl_mode",
+                "value": 0
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "caps_lock",
+              "lazy": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

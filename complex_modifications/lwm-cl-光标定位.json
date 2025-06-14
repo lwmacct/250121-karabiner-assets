@@ -1,8 +1,8 @@
 {
-  "title": "lwm-caps_lock-光标定位",
+  "title": "lwm-cl-光标定位",
   "rules": [
     {
-      "description": "lwm-caps_lock-光标定位 必须导入这个",
+      "description": "lwm-cl-光标定位 必须导入这个",
       "manipulators": [
         {
           "description": "启动模式",
@@ -10,9 +10,7 @@
           "from": {
             "key_code": "caps_lock",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "parameters": {
@@ -22,7 +20,7 @@
           "to_if_held_down": [
             {
               "set_variable": {
-                "name": "lwm_caps_lock_mode",
+                "name": "lwm_cl_mode",
                 "value": 1
               }
             }
@@ -30,7 +28,7 @@
           "to_after_key_up": [
             {
               "set_variable": {
-                "name": "lwm_caps_lock_mode",
+                "name": "lwm_cl_mode",
                 "value": 0
               }
             }
@@ -45,7 +43,7 @@
       ]
     },
     {
-      "description": "lwm-caps_lock-光标定位 [ikjl] 上下左右",
+      "description": "lwm-cl-光标定位 [ikjl] 上下左右",
       "manipulators": [
         {
           "description": "方向键上",
@@ -53,9 +51,7 @@
           "from": {
             "key_code": "i",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
@@ -66,7 +62,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             }
           ]
@@ -77,9 +73,7 @@
           "from": {
             "key_code": "k",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
@@ -90,7 +84,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             }
           ]
@@ -101,9 +95,7 @@
           "from": {
             "key_code": "j",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
@@ -114,7 +106,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             }
           ]
@@ -125,9 +117,7 @@
           "from": {
             "key_code": "l",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
@@ -138,7 +128,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             }
           ]
@@ -146,7 +136,7 @@
       ]
     },
     {
-      "description": "lwm-caps_lock-光标定位 [hn] 行首行尾",
+      "description": "lwm-cl-光标定位 [hn] 行首行尾",
       "manipulators": [
         {
           "description": "移动到行首",
@@ -154,23 +144,19 @@
           "from": {
             "key_code": "h",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": [
-                "left_command"
-              ]
+              "modifiers": ["left_command"]
             }
           ],
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             }
           ]
@@ -181,23 +167,19 @@
           "from": {
             "key_code": "n",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": [
-                "left_command"
-              ]
+              "modifiers": ["left_command"]
             }
           ],
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             }
           ]
@@ -205,7 +187,7 @@
       ]
     },
     {
-      "description": "lwm-caps_lock-光标定位 [uo] 左右选中",
+      "description": "lwm-cl-光标定位 [uo] 左右选中",
       "manipulators": [
         {
           "description": "向左选中",
@@ -213,23 +195,19 @@
           "from": {
             "key_code": "u",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": [
-                "left_shift"
-              ]
+              "modifiers": ["left_shift"]
             }
           ],
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             }
           ]
@@ -240,23 +218,19 @@
           "from": {
             "key_code": "o",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": [
-                "left_shift"
-              ]
+              "modifiers": ["left_shift"]
             }
           ],
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             }
           ]

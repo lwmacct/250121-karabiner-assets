@@ -1,8 +1,8 @@
 {
-  "title": "lwm-caps_lock-按键映射",
+  "title": "lwm-cl-magnet",
   "rules": [
     {
-      "description": "lwm-caps_lock-按键映射",
+      "description": "lwm-cl-magnet",
       "manipulators": [
         {
           "description": "cl+m (第一个快捷键)",
@@ -10,22 +10,17 @@
           "from": {
             "key_code": "m",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
             {
               "key_code": "return_or_enter",
-              "modifiers": [
-                "left_control",
-                "left_option"
-              ]
+              "modifiers": ["left_control", "left_option"]
             },
             {
               "set_variable": {
-                "name": "lwm_cl_m_toggle",
+                "name": "lwm_cl_key_m",
                 "value": 1
               }
             }
@@ -33,12 +28,12 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             },
             {
               "type": "variable_if",
-              "name": "lwm_cl_m_toggle",
+              "name": "lwm_cl_key_m",
               "value": 0
             }
           ]
@@ -49,22 +44,17 @@
           "from": {
             "key_code": "m",
             "modifiers": {
-              "optional": [
-                "any"
-              ]
+              "optional": ["any"]
             }
           },
           "to": [
             {
-              "key_code": "p",
-              "modifiers": [
-                "left_control",
-                "left_option"
-              ]
+              "key_code": "m",
+              "modifiers": ["left_control", "left_option"]
             },
             {
               "set_variable": {
-                "name": "lwm_cl_m_toggle",
+                "name": "lwm_cl_key_m",
                 "value": 0
               }
             }
@@ -72,12 +62,12 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_caps_lock_mode",
+              "name": "lwm_cl_mode",
               "value": 1
             },
             {
               "type": "variable_if",
-              "name": "lwm_cl_m_toggle",
+              "name": "lwm_cl_key_m",
               "value": 1
             }
           ]
