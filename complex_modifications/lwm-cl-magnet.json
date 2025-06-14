@@ -5,7 +5,7 @@
       "description": "lwm-cl-magnet",
       "manipulators": [
         {
-          "description": "cl+m (第一个快捷键)",
+          "description": "cl+m (最大化窗口)",
           "type": "basic",
           "from": {
             "key_code": "m",
@@ -39,7 +39,7 @@
           ]
         },
         {
-          "description": "cl+m (第二个快捷键)",
+          "description": "cl+m (自定义窗口)",
           "type": "basic",
           "from": {
             "key_code": "m",
