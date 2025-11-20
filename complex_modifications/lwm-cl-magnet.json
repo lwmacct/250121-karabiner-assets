@@ -2,7 +2,7 @@
   "title": "lwm-cl-magnet",
   "rules": [
     {
-      "description": "lwm-cl-magnet",
+      "description": "lwm-cl-magnet ~ 窗口磁贴 最大化/自定义",
       "manipulators": [
         {
           "description": "cl+m (最大化窗口)",

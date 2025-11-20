@@ -1,0 +1,34 @@
+{
+  "title": "lwm-cl-mapping",
+  "rules": [
+    {
+      "description": "lwm-cl-mapping ~ 按键映射",
+      "manipulators": [
+        {
+          "description": "cl+b (执行 control+b 动作)",
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_cl_mode",
+              "value": 1
+            }
+            
+          ]
+        }
+      ]
+    }
+  ]
+}
