@@ -2,7 +2,7 @@
   "title": "lwm-cl-caps-lock",
   "rules": [
     {
-      "description": "lwm-cl-caps-lock ~ 必须导入这个",
+      "description": "(lwm-cl-caps-lock) 必须导入这个",
       "manipulators": [
         {
           "description": "启动模式",

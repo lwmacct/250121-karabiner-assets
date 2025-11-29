@@ -2,7 +2,7 @@
   "title": "lwm-cl-tab-toggle",
   "rules": [
     {
-      "description": "lwm-cl-tab-toggle ~ Tab 切换",
+      "description": "(lwm-cl-tab-toggle) Tab 切换",
       "manipulators": [
         {
           "description": "下一个",

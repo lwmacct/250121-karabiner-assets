@@ -1,49 +1,8 @@
 {
-  "title": "lwm-cl-光标定位",
+  "title": "lwm-cl-cursor",
   "rules": [
     {
-      "description": "lwm-cl-光标定位 必须导入这个",
-      "manipulators": [
-        {
-          "description": "启动模式",
-          "type": "basic",
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "parameters": {
-            "basic.to_if_alone_timeout_milliseconds": 250,
-            "basic.to_if_held_down_threshold_milliseconds": 1
-          },
-          "to_if_held_down": [
-            {
-              "set_variable": {
-                "name": "lwm_caps_lock",
-                "value": 1
-              }
-            }
-          ],
-          "to_after_key_up": [
-            {
-              "set_variable": {
-                "name": "lwm_caps_lock",
-                "value": 0
-              }
-            }
-          ],
-          "to_if_alone": [
-            {
-              "key_code": "caps_lock",
-              "lazy": true
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "lwm-cl-光标定位 [ikjl] 上下左右",
+      "description": "(lwm-cl-cursor) [ikjl] 上下左右",
       "manipulators": [
         {
           "description": "方向键上",
@@ -136,7 +95,7 @@
       ]
     },
     {
-      "description": "lwm-cl-光标定位 [hn] 行首行尾",
+      "description": "(lwm-cl-cursor) [hn] 行首行尾",
       "manipulators": [
         {
           "description": "移动到行首",
@@ -187,7 +146,7 @@
       ]
     },
     {
-      "description": "lwm-cl-光标定位 [uo] 左右选中",
+      "description": "(lwm-cl-cursor) [uo] 左右选中",
       "manipulators": [
         {
           "description": "向左选中",

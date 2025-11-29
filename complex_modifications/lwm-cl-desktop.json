@@ -1,8 +1,8 @@
 {
-  "title": "lwm-cl-桌面切换",
+  "title": "lwm-cl-desktop",
   "rules": [
     {
-      "description": "lwm-cl-桌面切换 ~ 1-12 (qwer,asdf,zxcv)",
+      "description": "(lwm-cl-desktop) 1-12 (qwer,asdf,zxcv)",
       "manipulators": [
         {
           "description": "桌面 1",

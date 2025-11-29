@@ -2,7 +2,7 @@
   "title": "lwm-cl-mapping",
   "rules": [
     {
-      "description": "lwm-cl-mapping ~ 按键映射",
+      "description": "(lwm-cl-mapping) 按键映射",
       "manipulators": [
         {
           "description": "cl+b (执行 control+b 动作)",
