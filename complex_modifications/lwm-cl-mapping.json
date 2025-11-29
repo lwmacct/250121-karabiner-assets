@@ -110,6 +110,15 @@
               "key_code": "n"
             }
           ],
+          "to_if_held_down": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "n"
+            }
+          ],
           "conditions": [
             {
               "type": "variable_if",
@@ -128,6 +137,15 @@
             }
           },
           "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "p"
+            }
+          ],
+          "to_if_held_down": [
             {
               "key_code": "b",
               "modifiers": ["left_control"]
