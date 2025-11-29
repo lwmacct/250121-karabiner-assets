@@ -5,7 +5,7 @@
       "description": "(lwm-cl-tmux) tmux 快捷键",
       "manipulators": [
         {
-          "description": "cl+space+c (tmux 新建标签页: Ctrl+B c)",
+          "description": "cl+space+c (新建窗口: Ctrl+B c)",
           "type": "basic",
           "from": {
             "key_code": "c",
@@ -31,10 +31,168 @@
           ]
         },
         {
-          "description": "cl+space+. (tmux 下一个窗口: Ctrl+B n)",
+          "description": "cl+space+x (关闭窗格: Ctrl+B x)",
           "type": "basic",
           "from": {
-            "key_code": "period",
+            "key_code": "x",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "x"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+d (分离会话: Ctrl+B d)",
+          "type": "basic",
+          "from": {
+            "key_code": "d",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "d"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+z (最大化窗格: Ctrl+B z)",
+          "type": "basic",
+          "from": {
+            "key_code": "z",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "z"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+v (垂直分割: Ctrl+B %)",
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "5",
+              "modifiers": ["left_shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+s (水平分割: Ctrl+B \")",
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "quote",
+              "modifiers": ["left_shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+o (切换窗格: Ctrl+B o)",
+          "type": "basic",
+          "from": {
+            "key_code": "o",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "o"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+n (下一个窗口: Ctrl+B n)",
+          "type": "basic",
+          "from": {
+            "key_code": "n",
             "modifiers": {
               "optional": ["any"]
             }
@@ -57,10 +215,10 @@
           ]
         },
         {
-          "description": "cl+space+, (tmux 上一个窗口: Ctrl+B p)",
+          "description": "cl+space+p (上一个窗口: Ctrl+B p)",
           "type": "basic",
           "from": {
-            "key_code": "comma",
+            "key_code": "p",
             "modifiers": {
               "optional": ["any"]
             }
@@ -72,6 +230,424 @@
             },
             {
               "key_code": "p"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+w (窗口列表: Ctrl+B w)",
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "w"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+l (上次窗口: Ctrl+B l)",
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "l"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+[ (复制模式: Ctrl+B [)",
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "open_bracket"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+] (粘贴: Ctrl+B ])",
+          "type": "basic",
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "close_bracket"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+; (命令模式: Ctrl+B :)",
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "semicolon",
+              "modifiers": ["left_shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+/ (帮助: Ctrl+B ?)",
+          "type": "basic",
+          "from": {
+            "key_code": "slash",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "slash",
+              "modifiers": ["left_shift"]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+0 (窗口0: Ctrl+B 0)",
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "0"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+1 (窗口1: Ctrl+B 1)",
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "1"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+2 (窗口2: Ctrl+B 2)",
+          "type": "basic",
+          "from": {
+            "key_code": "2",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "2"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+3 (窗口3: Ctrl+B 3)",
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "3"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+4 (窗口4: Ctrl+B 4)",
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "4"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+5 (窗口5: Ctrl+B 5)",
+          "type": "basic",
+          "from": {
+            "key_code": "5",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "5"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+6 (窗口6: Ctrl+B 6)",
+          "type": "basic",
+          "from": {
+            "key_code": "6",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "6"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+7 (窗口7: Ctrl+B 7)",
+          "type": "basic",
+          "from": {
+            "key_code": "7",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "7"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+8 (窗口8: Ctrl+B 8)",
+          "type": "basic",
+          "from": {
+            "key_code": "8",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "8"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "cl+space+9 (窗口9: Ctrl+B 9)",
+          "type": "basic",
+          "from": {
+            "key_code": "9",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "9"
             }
           ],
           "conditions": [

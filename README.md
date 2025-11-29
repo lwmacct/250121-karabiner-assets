@@ -96,11 +96,24 @@
 
 #### tmux 操作 (lwm-cl-tmux.json)
 
-| 按键 | 功能            | 等效按键 |
-| ---- | --------------- | -------- |
-| c    | tmux 新建标签页 | Ctrl+B c |
-| .    | tmux 下一个窗口 | Ctrl+B n |
-| ,    | tmux 上一个窗口 | Ctrl+B p |
+| 按键  | 功能         | 等效按键  |
+| ----- | ------------ | --------- |
+| c     | 新建窗口     | Ctrl+B c  |
+| x     | 关闭窗格     | Ctrl+B x  |
+| d     | 分离会话     | Ctrl+B d  |
+| z     | 最大化窗格   | Ctrl+B z  |
+| v     | 垂直分割     | Ctrl+B %  |
+| s     | 水平分割     | Ctrl+B "  |
+| o     | 切换窗格     | Ctrl+B o  |
+| n     | 下一个窗口   | Ctrl+B n  |
+| p     | 上一个窗口   | Ctrl+B p  |
+| w     | 窗口列表     | Ctrl+B w  |
+| l     | 上次窗口     | Ctrl+B l  |
+| [     | 复制模式     | Ctrl+B [  |
+| ]     | 粘贴         | Ctrl+B ]  |
+| ;     | 命令模式     | Ctrl+B :  |
+| /     | 帮助         | Ctrl+B ?  |
+| 0-9   | 切换窗口     | Ctrl+B 0-9|
 
 ---
 
