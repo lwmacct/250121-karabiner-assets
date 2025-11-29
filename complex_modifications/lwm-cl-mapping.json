@@ -5,7 +5,7 @@
       "description": "(lwm-cl-mapping) 按键映射",
       "manipulators": [
         {
-          "description": "cl+b (执行 control+b 动作)",
+          "description": "cl+bb (双击b: tmux 新建标签页 Ctrl+B c)",
           "type": "basic",
           "from": {
             "key_code": "b",
@@ -17,6 +17,15 @@
             {
               "key_code": "b",
               "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "c"
+            },
+            {
+              "set_variable": {
+                "name": "lwm_b_double_tap",
+                "value": 0
+              }
             }
           ],
           "conditions": [
@@ -24,6 +33,62 @@
               "type": "variable_if",
               "name": "lwm_caps_lock",
               "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_b_double_tap",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "cl+b (第一次按b: 开启双击窗口)",
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 300
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "lwm_b_double_tap",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "lwm_b_double_tap",
+                  "value": 0
+                }
+              }
+            ],
+            "to_if_canceled": [
+              {
+                "set_variable": {
+                  "name": "lwm_b_double_tap",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_b_double_tap",
+              "value": 0
             }
           ]
         },
