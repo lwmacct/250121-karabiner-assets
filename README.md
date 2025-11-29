@@ -15,7 +15,7 @@
 
 ### 核心文件
 
-- **lwm-cl-caps-lock.json** - 核心配置，定义状态切换：
+- **lwm-cl-caps_lock.json** - 核心配置，定义状态切换：
   - CapsLock 单击按住 → `lwm_caps_lock = 1`（进入第一层）
   - CapsLock 松开 → `lwm_caps_lock = 0`（退出所有层）
   - 300ms 内双击 CapsLock 并按住 → `lwm_caps_lock = 2`（进入第二层）
