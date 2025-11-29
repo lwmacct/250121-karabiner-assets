@@ -108,47 +108,6 @@
           ]
         }
       ]
-    },
-    {
-      "description": "(lwm-cl-caps_lock) 拦截未绑定按键",
-      "manipulators": [
-        {
-          "description": "第一层：拦截所有未绑定的按键",
-          "type": "basic",
-          "from": {
-            "any": "key_code",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "lwm_caps_lock",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "description": "第二层：拦截所有未绑定的按键",
-          "type": "basic",
-          "from": {
-            "any": "key_code",
-            "modifiers": {
-              "optional": ["any"]
-            }
-          },
-          "to": [],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "lwm_caps_lock",
-              "value": 2
-            }
-          ]
-        }
-      ]
     }
   ]
 }
