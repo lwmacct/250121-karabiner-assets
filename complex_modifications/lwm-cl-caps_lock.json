@@ -5,10 +5,10 @@
       "description": "(lwm-cl-caps_lock) 必须导入这个",
       "manipulators": [
         {
-          "description": "第二层 + Space 保持第二层（拦截输出）",
+          "description": "第二层 + b 保持第二层（拦截输出）",
           "type": "basic",
           "from": {
-            "key_code": "spacebar",
+            "key_code": "b",
             "modifiers": {
               "optional": ["any"]
             }
@@ -30,7 +30,32 @@
           ]
         },
         {
-          "description": "第一层 + Space 进入第二层",
+          "description": "第一层 + b 进入第二层 (tmux)",
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "lwm_caps_lock",
+                "value": 2
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "第三层 + Space 保持第三层（拦截输出）",
           "type": "basic",
           "from": {
             "key_code": "spacebar",
@@ -42,7 +67,32 @@
             {
               "set_variable": {
                 "name": "lwm_caps_lock",
-                "value": 2
+                "value": 3
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 3
+            }
+          ]
+        },
+        {
+          "description": "第一层 + Space 进入第三层 (系统控制)",
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "lwm_caps_lock",
+                "value": 3
               }
             }
           ],
