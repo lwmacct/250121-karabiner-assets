@@ -15,11 +15,23 @@
 
 ### 核心文件
 
-- **lwm-cl-caps_lock.json** - 核心配置，定义状态切换：
+- **lwm-cl-caps_lock.json** - 核心配置（⚠️ **必须最后导入**）：
   - CapsLock 单击按住 → `lwm_caps_lock = 1`（进入第一层）
   - CapsLock 松开 → `lwm_caps_lock = 0`（退出所有层）
   - 300ms 内双击 CapsLock 并按住 → `lwm_caps_lock = 2`（进入第二层）
   - 使用 `lwm_double_tap_window` 变量实现双击检测
+  - 内置 catch-all 规则：拦截所有未绑定按键（`"any": "key_code"` + `"to": []`）
+
+### 导入顺序
+
+```
+1. lwm-cl-cursor.json        (光标定位)
+2. lwm-cl-desktop.json       (桌面切换)
+3. lwm-cl-tab_toggle.json    (Tab 切换)
+4. lwm-cl-magnet.json        (窗口磁贴)
+5. lwm-cl-mapping.json       (按键映射)
+6. lwm-cl-caps_lock.json     (核心 + catch-all - 必须最后!)
+```
 
 ### 双击检测原理
 
