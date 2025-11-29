@@ -15,15 +15,10 @@
 
 ### 核心文件
 
-- **lwm-cl-caps-lock.json** - 核心配置，定义 CapsLock 的行为：
-
+- **lwm-cl-caps_lock.json** - 核心配置，定义状态切换：
   - CapsLock 按下 → `lwm_caps_lock = 1`（进入第一层）
   - CapsLock 松开 → `lwm_caps_lock = 0`（退出所有层）
-  - `to_if_held_down_threshold_milliseconds: 1` 使 CapsLock 被完全征用为修饰键，原本的大小写锁定功能被禁用
-
-- **lwm-cl-caps-lock-space.json** - Space 键配置（第二层触发器）：
-  - 条件：`lwm_caps_lock = 1`
-  - Space 按下 → `lwm_caps_lock = 2`（进入第二层，不输出空格）
+  - Space 按下（第一层时）→ `lwm_caps_lock = 2`（进入第二层，不输出空格）
   - Space 松开 → `lwm_caps_lock = 1`（返回第一层）
 
 ---
