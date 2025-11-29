@@ -20,6 +20,7 @@
   - CapsLock 松开 → `lwm_caps_lock = 0`（退出所有层）
   - 300ms 内双击 CapsLock 并按住 → `lwm_caps_lock = 2`（进入第二层）
   - 第一层 + Space → `lwm_caps_lock = 2`（进入第二层，松开 CapsLock 退出）
+  - 第二层 + Space → 保持第二层（多次按空格确认状态，拦截输出）
   - 使用 `lwm_double_tap_window` 变量实现双击检测
 
 ### 双击检测原理

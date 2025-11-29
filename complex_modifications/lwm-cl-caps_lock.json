@@ -5,6 +5,31 @@
       "description": "(lwm-cl-caps_lock) 必须导入这个",
       "manipulators": [
         {
+          "description": "第二层 + Space 保持第二层（拦截输出）",
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "lwm_caps_lock",
+                "value": 2
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
           "description": "第一层 + Space 进入第二层",
           "type": "basic",
           "from": {
