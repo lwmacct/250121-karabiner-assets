@@ -28,7 +28,7 @@
           ]
         },
         {
-          "description": "cl+; (映射到 F13)",
+          "description": "cl+; (tmux 上一个窗口: Ctrl+B p)",
           "type": "basic",
           "from": {
             "key_code": "semicolon",
@@ -38,7 +38,11 @@
           },
           "to": [
             {
-              "key_code": "f13"
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "p"
             }
           ],
           "conditions": [
@@ -50,7 +54,7 @@
           ]
         },
         {
-          "description": "cl+' (映射到 F14)",
+          "description": "cl+' (tmux 下一个窗口: Ctrl+B n)",
           "type": "basic",
           "from": {
             "key_code": "quote",
@@ -60,7 +64,63 @@
           },
           "to": [
             {
-              "key_code": "f14"
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "n"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_cl_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "cl+[ (tmux 上方窗格: Ctrl+B ↑)",
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "up_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_cl_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "cl+] (tmux 下方窗格: Ctrl+B ↓)",
+          "type": "basic",
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "b",
+              "modifiers": ["left_control"]
+            },
+            {
+              "key_code": "down_arrow"
             }
           ],
           "conditions": [
