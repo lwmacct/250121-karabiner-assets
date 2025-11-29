@@ -1,3 +1,97 @@
+# 架构说明
+
+## 多层状态机设计
+
+本配置基于 CapsLock 键实现了一个多层状态机系统，使用单一变量 `lwm_caps_lock` 管理所有状态：
+
+### 状态定义
+
+| lwm_caps_lock | 状态   | 触发条件              | 按键行为                             |
+| ------------- | ------ | --------------------- | ------------------------------------ |
+| 0             | 普通   | 默认                  | 正常输入                             |
+| 1             | 第一层 | CapsLock 按住         | 现有绑定生效（桌面切换、Tab 切换等） |
+| 2             | 第二层 | CapsLock + Space 按住 | 全新绑定（未定义的键无输出）         |
+| 3+            | 可扩展 | 未来可加更多层        | ...                                  |
+
+### 核心文件
+
+- **lwm-cl-caps-lock.json** - 核心配置，定义 CapsLock 的行为：
+
+  - CapsLock 按下 → `lwm_caps_lock = 1`（进入第一层）
+  - CapsLock 松开 → `lwm_caps_lock = 0`（退出所有层）
+  - `to_if_held_down_threshold_milliseconds: 1` 使 CapsLock 被完全征用为修饰键，原本的大小写锁定功能被禁用
+
+- **lwm-cl-caps-lock-space.json** - Space 键配置（第二层触发器）：
+  - 条件：`lwm_caps_lock = 1`
+  - Space 按下 → `lwm_caps_lock = 2`（进入第二层，不输出空格）
+  - Space 松开 → `lwm_caps_lock = 1`（返回第一层）
+
+---
+
+## 按键速查表
+
+### 第一层 (CapsLock 按住)
+
+#### 光标定位 (lwm-cl-光标定位.json)
+
+| 按键 | 功能       | 等效按键  |
+| ---- | ---------- | --------- |
+| i    | 方向键上   | ↑         |
+| k    | 方向键下   | ↓         |
+| j    | 方向键左   | ←         |
+| l    | 方向键右   | →         |
+| h    | 移动到行首 | Cmd + ←   |
+| n    | 移动到行尾 | Cmd + →   |
+| u    | 向左选中   | Shift + ← |
+| o    | 向右选中   | Shift + → |
+
+#### 桌面切换 (lwm-cl-桌面切换.json)
+
+| 按键 | 功能    | 等效按键          |
+| ---- | ------- | ----------------- |
+| q    | 桌面 1  | Ctrl + 1          |
+| w    | 桌面 2  | Ctrl + 2          |
+| e    | 桌面 3  | Ctrl + 3          |
+| r    | 桌面 4  | Ctrl + 4          |
+| a    | 桌面 5  | Ctrl + 5          |
+| s    | 桌面 6  | Ctrl + 6          |
+| d    | 桌面 7  | Ctrl + 7          |
+| f    | 桌面 8  | Ctrl + 8          |
+| z    | 桌面 9  | Ctrl + 9          |
+| x    | 桌面 10 | Ctrl + 0          |
+| c    | 桌面 11 | Ctrl + Option + 1 |
+| v    | 桌面 12 | Ctrl + Option + 2 |
+
+#### Tab 切换 (lwm-cl-tab-toggle.json)
+
+| 按键 | 功能       | 等效按键           |
+| ---- | ---------- | ------------------ |
+| .    | 下一个 Tab | Ctrl + Tab         |
+| ,    | 上一个 Tab | Ctrl + Shift + Tab |
+
+#### 窗口磁贴 (lwm-cl-magnet.json)
+
+| 按键 | 功能                    | 等效按键                                  |
+| ---- | ----------------------- | ----------------------------------------- |
+| m    | 最大化窗口 / 自定义窗口 | Ctrl + Option + Enter / Ctrl + Option + M |
+
+#### 按键映射 (lwm-cl-mapping.json)
+
+| 按键 | 功能      | 等效按键 |
+| ---- | --------- | -------- |
+| b    | tmux 前缀 | Ctrl + B |
+
+### 第二层 (CapsLock + Space 按住)
+
+#### tmux 窗口切换 (lwm-cl-mapping.json)
+
+| 按键 | 功能            | 等效按键 |
+| ---- | --------------- | -------- |
+| .    | tmux 下一个窗口 | Ctrl+B n |
+| ,    | tmux 上一个窗口 | Ctrl+B p |
+
+---
+
 # 推荐阅读
 
 - 代码仓库 [https://github.com/lwmacct/250121-karabiner-assets](https://github.com/lwmacct/250121-karabiner-assets)

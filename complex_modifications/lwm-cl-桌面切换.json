@@ -23,7 +23,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -47,7 +47,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -71,7 +71,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -95,7 +95,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -119,7 +119,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -143,7 +143,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -167,7 +167,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -191,7 +191,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -215,7 +215,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -239,7 +239,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -263,7 +263,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
@@ -287,7 +287,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "lwm_cl_mode",
+              "name": "lwm_caps_lock",
               "value": 1
             }
           ]
