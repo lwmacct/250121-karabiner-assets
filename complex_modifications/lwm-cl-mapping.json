@@ -25,7 +25,50 @@
               "name": "lwm_cl_mode",
               "value": 1
             }
-            
+          ]
+        },
+        {
+          "description": "cl+; (映射到 F13)",
+          "type": "basic",
+          "from": {
+            "key_code": "semicolon",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f13"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_cl_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "description": "cl+' (映射到 F14)",
+          "type": "basic",
+          "from": {
+            "key_code": "quote",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "f14"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_cl_mode",
+              "value": 1
+            }
           ]
         }
       ]
