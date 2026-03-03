@@ -1,0 +1,35 @@
+{
+  "title": "lwm-map-other",
+  "rules": [
+    {
+      "description": "(lwm-map-other) Left Shift 单击触发 Ctrl + Space",
+      "manipulators": [
+        {
+          "description": "left_shift 按下后立即松开 -> Ctrl + Space",
+          "type": "basic",
+          "from": {
+            "key_code": "left_shift",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_shift",
+              "lazy": true
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "spacebar",
+              "modifiers": ["left_control"]
+            }
+          ],
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 250
+          }
+        }
+      ]
+    }
+  ]
+}
