@@ -1,140 +1,116 @@
-# 架构说明
+# Karabiner 映射说明（按当前代码）
 
-## 多层状态机设计
+本仓库只包含 `complex_modifications/*.json`，对应 5 组规则：
 
-本配置基于 CapsLock 键实现多层状态机，核心变量为 `lwm_caps_lock`（L1）和 `lwm_l2_hold`（L2）：
+- `m-core-caps-state.json`：层状态机（Caps/L1/L2）
+- `m-l1-navigation.json`：L1 导航、Tab 切换、窗口磁贴
+- `m-l1-desktop.json`：L1 桌面 1-12 切换
+- `m-l2-mode.json`：L2 预留（a-z 全拦截）
+- `m-keymap.json`：Left Shift 单击切输入法
 
-### 状态定义
+## 快速使用
 
-| 条件 | 状态   | 触发条件 | 按键行为 |
-| ---- | ------ | -------- | -------- |
-| `lwm_caps_lock = 0` | 普通   | 默认 | 正常输入 |
-| `lwm_caps_lock = 1` 且 `lwm_l2_hold = 0` | 第一层 | CapsLock 按住 | 光标、桌面、Tab 切换等 |
-| `lwm_caps_lock = 1` 且 `lwm_l2_hold = 1` | 第二层 | 第一层按住 Space | 预留模式（a-z 待定义） |
+1. 安装 Karabiner-Elements。
+2. 把本仓库里的 `complex_modifications/*.json` 放到：
+   - `~/.config/karabiner/assets/complex_modifications/`
+3. 打开 Karabiner-Elements -> Complex Modifications -> Add predefined rule。
+4. 按需启用本仓库规则（当前共 9 条，按文件分组如下）：
+   - `m-core-caps-state.json`：1 条
+   - `m-l1-navigation.json`：5 条
+   - `m-l1-desktop.json`：1 条
+   - `m-l2-mode.json`：1 条
+   - `m-keymap.json`：1 条
 
-### 核心文件
+## 状态机
 
-- **m-core-caps-state.json** - 核心配置：
-  - CapsLock 按住 → `lwm_caps_lock = 1`（进入第一层）
-  - 第一层按住 Space → `lwm_l2_hold = 1`（进入第二层预留模式）
-  - Space 弹起 → `lwm_l2_hold = 0`（回到第一层）
-  - CapsLock 弹起 → 清空所有层状态（`lwm_caps_lock = 0`, `lwm_l2_hold = 0`）
-- **m-l1-navigation.json** - 第一层导航映射（光标/Tab/窗口磁贴）
-- **m-l2-mode.json** - 第二层预留映射（a-z）
-- **m-keymap.json** - 输入法切换映射：
-  - Left Shift 单击（按下后立即松开）→ `Ctrl + Space`
-  - Left Shift 长按或与其他键组合时，不触发输入法切换
+使用 3 个变量：
 
-### 模式切换流程
+- `lwm_caps_lock`：是否进入第一层（L1）
+- `lwm_l2_hold`：是否进入第二层（L2）
+- `lwm_cl_key_m`：L1 下 `m` 键二段切换状态
 
-```
-按下 CapsLock:
-└── 进入第一层（lwm_caps_lock = 1）
+状态切换逻辑：
 
-第一层中:
-└── 按住 Space -> 第二层（lwm_l2_hold = 1）
+1. 按住 `CapsLock`（阈值 1ms）-> `lwm_caps_lock=1`，进入 L1
+2. 在 L1 按住 `Space` -> `lwm_l2_hold=1`，进入 L2
+3. 松开 `Space` -> `lwm_l2_hold=0`，回到 L1
+4. 松开 `CapsLock` -> `lwm_caps_lock=0`、`lwm_l2_hold=0`、`lwm_cl_key_m=0`
 
-释放 Space:
-└── 返回第一层（lwm_l2_hold = 0）
+状态含义：
 
-释放 CapsLock:
-└── 退出全部层（lwm_caps_lock = 0, lwm_l2_hold = 0）
-```
-
----
+| 条件 | 状态 |
+| --- | --- |
+| `lwm_caps_lock=0` | 普通层（L0） |
+| `lwm_caps_lock=1` 且 `lwm_l2_hold=0` | 第一层（L1） |
+| `lwm_caps_lock=1` 且 `lwm_l2_hold=1` | 第二层（L2） |
 
 ## 按键速查表
 
-### 第一层 (CapsLock 按住)
+### 普通层（`lwm_caps_lock=0`）
 
-#### 光标定位 (m-l1-navigation.json)
+| 按键 | 条件 | 输出 |
+| --- | --- | --- |
+| Left Shift 单击 | 180ms 内单独按下并抬起 | `Ctrl + Space` |
+| Left Shift 长按/组合 | 与其他键组合或超过单击超时 | 保持 `Shift` 原行为 |
 
-| 按键 | 功能       | 等效按键  |
-| ---- | ---------- | --------- |
-| i    | 方向键上   | ↑         |
-| k    | 方向键下   | ↓         |
-| j    | 方向键左   | ←         |
-| l    | 方向键右   | →         |
-| h    | 移动到行首 | Cmd + ←   |
-| n    | 移动到行尾 | Cmd + →   |
-| u    | 向左选中   | Shift + ← |
-| o    | 向右选中   | Shift + → |
+> 说明：Left Shift 输入法切换只在普通层生效（L1/L2 不生效）。
 
-#### 桌面切换 (m-l1-desktop.json)
+### 第一层 L1（按住 Caps，且 `lwm_l2_hold=0`）
 
-| 按键 | 功能    | 等效按键          |
-| ---- | ------- | ----------------- |
-| q    | 桌面 1  | Ctrl + 1          |
-| w    | 桌面 2  | Ctrl + 2          |
-| e    | 桌面 3  | Ctrl + 3          |
-| r    | 桌面 4  | Ctrl + 4          |
-| a    | 桌面 5  | Ctrl + 5          |
-| s    | 桌面 6  | Ctrl + 6          |
-| d    | 桌面 7  | Ctrl + 7          |
-| f    | 桌面 8  | Ctrl + 8          |
-| z    | 桌面 9  | Ctrl + 9          |
-| x    | 桌面 10 | Ctrl + 0          |
-| c    | 桌面 11 | Ctrl + Option + 1 |
-| v    | 桌面 12 | Ctrl + Option + 2 |
+#### 光标与选中
 
-#### Tab 切换 (m-l1-navigation.json)
+| 按键 | 输出 |
+| --- | --- |
+| `i` | `Up`（可连发） |
+| `k` | `Down`（可连发） |
+| `j` | `Left`（可连发） |
+| `l` | `Right`（可连发） |
+| `h` | `Cmd + Left` |
+| `n` | `Cmd + Right` |
+| `u` | `Shift + Left`（可连发） |
+| `o` | `Shift + Right`（可连发） |
 
-| 按键 | 功能       | 等效按键           |
-| ---- | ---------- | ------------------ |
-| .    | 下一个 Tab | Ctrl + Tab         |
-| ,    | 上一个 Tab | Ctrl + Shift + Tab |
+#### Tab 切换
 
-#### 窗口磁贴 (m-l1-navigation.json)
+| 按键 | 输出 |
+| --- | --- |
+| `.` | `Ctrl + Tab` |
+| `,` | `Ctrl + Shift + Tab` |
 
-| 按键 | 功能                    | 等效按键                                  |
-| ---- | ----------------------- | ----------------------------------------- |
-| m    | 最大化窗口 / 自定义窗口 | Ctrl + Option + Enter / Ctrl + Option + M |
+#### 桌面切换
 
-### 第二层 (第一层按住 Space)
+| 按键 | 输出 |
+| --- | --- |
+| `q`/`w`/`e`/`r` | `Ctrl + 1/2/3/4` |
+| `a`/`s`/`d`/`f` | `Ctrl + 5/6/7/8` |
+| `z`/`x` | `Ctrl + 9/0` |
+| `c`/`v` | `Ctrl + Option + 1/2` |
 
-#### 预留模式 (m-l2-mode.json)
+#### 窗口磁贴（`m` 二段切换）
 
-| 按键 | 当前行为 |
-| ---- | -------- |
-| a-z  | 占位拦截（`vk_none`） |
+| 连续按键（均在 L1） | 输出 | 变量变化 |
+| --- | --- | --- |
+| 第 1 次按 `m` | `Ctrl + Option + Enter` | `lwm_cl_key_m: 0 -> 1` |
+| 第 2 次按 `m` | `Ctrl + Option + m` | `lwm_cl_key_m: 1 -> 0` |
 
-### 其他映射 (m-keymap.json)
+### 第二层 L2（按住 Caps+Space，`lwm_l2_hold=1`）
 
-| 按键               | 功能       | 等效按键     |
-| ------------------ | ---------- | ------------ |
-| Left Shift 单击 | 输入法切换 | Ctrl + Space |
+| 按键 | 输出 |
+| --- | --- |
+| `a-z` | `vk_none`（占位拦截，可连发） |
 
----
+> 说明：L2 目前仅拦截字母键 `a-z`，其余未定义键位保持系统默认行为。
 
-# 推荐阅读
+## 代码级注意事项
 
-- 代码仓库 [https://github.com/lwmacct/250121-karabiner-assets](https://github.com/lwmacct/250121-karabiner-assets)
-- 语雀文档 [https://www.yuque.com/lwmacct/macos/karabiner](https://www.yuque.com/lwmacct/macos/karabiner)
-- 下载安装 [https://karabiner-elements.pqrs.org/](https://karabiner-elements.pqrs.org/)
-- win 平替 [https://github.com/moshuying/myAHK](https://github.com/moshuying/myAHK)
+- `CapsLock` 在这套规则里是层切换键，不再发送原始 `caps_lock`。
+- `CapsLock` 单击不会触发任何输出（没有 `to_if_alone`）。
+- 在 L1 按住 `Space` 会切到 L2，`Space` 本身不会输出空格。
+- `lwm_cl_key_m` 会在按下/松开 `CapsLock` 时清零，避免跨次残留。
 
-# 使用示例
+## 自检清单（按当前代码）
 
-- macos 打开终端直接执行 (需要先安装 git)
-
-```bash
-#!/usr/bin/env bash
-
-__main() {
-  cd ~/.config/karabiner || return 1
-  rm -rf assets
-  git clone https://github.com/lwmacct/250121-karabiner-assets.git assets
-}
-
-__main
-```
-
----
-
-# 语雀贴图
-
-![](https://cdn.nlark.com/yuque/0/2025/png/780867/1737446037507-1e915634-9187-457b-8071-4c6f7df00c62.png)
-
-![](https://cdn.nlark.com/yuque/0/2025/png/780867/1737447084068-8f3a00ea-c956-42e3-9b70-f43066e27a25.png)
-
-![](https://cdn.nlark.com/yuque/0/2025/png/780867/1737448228174-70e2ab97-ef99-4a68-b068-5ababaf78e1f.png)
+1. 开启 EventViewer，确认按住 `CapsLock` 时变量 `lwm_caps_lock=1`。
+2. 在按住 `CapsLock` 的同时按住 `Space`，确认 `lwm_l2_hold=1`。
+3. L1 按 `i/j/k/l`，应输出方向键；L2 按 `a-z` 应无输出（`vk_none`）。
+4. 普通层单击 Left Shift（小于 180ms）应输出 `Ctrl+Space`。
