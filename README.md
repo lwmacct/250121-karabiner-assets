@@ -21,8 +21,8 @@
   - CapsLock 弹起 → 清空所有层状态（`lwm_caps_lock = 0`, `lwm_l2_hold = 0`）
 - **m-l1-navigation.json** - 第一层导航映射（光标/Tab/窗口磁贴）
 - **m-l2-mode.json** - 第二层预留映射（a-z）
-- **m-map-input-toggle.json** - 输入法切换映射：
-  - Right Command 单击（按下后立即松开）→ `Ctrl + Space`
+- **m-keymap.json** - 输入法切换映射：
+  - Left Shift 单击（按下后立即松开）→ `Ctrl + Space`
 
 ### 模式切换流程
 
@@ -97,11 +97,11 @@
 | ---- | -------- |
 | a-z  | 占位拦截（`vk_none`） |
 
-### 其他映射 (m-map-input-toggle.json)
+### 其他映射 (m-keymap.json)
 
 | 按键               | 功能       | 等效按键     |
 | ------------------ | ---------- | ------------ |
-| Right Command 单击 | 输入法切换 | Ctrl + Space |
+| Left Shift 单击 | 输入法切换 | Ctrl + Space |
 
 ---
 

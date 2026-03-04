@@ -12,7 +12,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -36,7 +37,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -60,7 +62,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -84,7 +87,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -108,7 +112,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -132,7 +137,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -156,7 +162,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -180,7 +187,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -204,7 +212,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -228,7 +237,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -252,7 +262,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -276,7 +287,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -300,7 +312,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -324,7 +337,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -348,7 +362,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -372,7 +387,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -396,7 +412,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -420,7 +437,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -444,7 +462,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -468,7 +487,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -492,7 +512,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -516,7 +537,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -540,7 +562,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -564,7 +587,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -588,7 +612,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [
@@ -612,7 +637,8 @@
           },
           "to": [
             {
-              "key_code": "vk_none"
+              "key_code": "vk_none",
+              "repeat": true
             }
           ],
           "conditions": [

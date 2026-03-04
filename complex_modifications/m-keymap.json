@@ -1,14 +1,14 @@
 {
-  "title": "m-map-input-toggle",
+  "title": "m-keymap",
   "rules": [
     {
-      "description": "（m-map-input-toggle）Right Command 单击触发输入法切换（Ctrl+Space）",
+      "description": "（m-keymap）Left Shift 单击触发输入法切换（Ctrl+Space）",
       "manipulators": [
         {
-          "description": "Right Command 单击（发送 Ctrl+Space）",
+          "description": "Left Shift 单击（发送 Ctrl+Space）",
           "type": "basic",
           "from": {
-            "key_code": "right_command",
+            "key_code": "left_shift",
             "modifiers": {
               "optional": [
                 "any"
@@ -17,7 +17,7 @@
           },
           "to": [
             {
-              "key_code": "right_command",
+              "key_code": "left_shift",
               "lazy": true
             }
           ],
