@@ -21,6 +21,22 @@
    - `m-l2-mode.json`：1 条
    - `m-keymap.json`：1 条
 
+## 使用示例（Git 拉取脚本）
+
+下面是用于在本机覆盖更新 `~/.config/karabiner/assets` 的脚本：
+
+```bash
+#!/usr/bin/env bash
+
+__main() {
+  cd ~/.config/karabiner || return 1
+  rm -rf assets
+  git clone https://github.com/lwmacct/250121-karabiner-assets.git assets
+}
+
+__main
+```
+
 ## 状态机
 
 使用 3 个变量：
