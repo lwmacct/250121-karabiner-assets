@@ -23,6 +23,7 @@
 - **m-l2-mode.json** - 第二层预留映射（a-z）
 - **m-keymap.json** - 输入法切换映射：
   - Left Shift 单击（按下后立即松开）→ `Ctrl + Space`
+  - Left Shift 长按或与其他键组合时，不触发输入法切换
 
 ### 模式切换流程
 
