@@ -15,14 +15,7 @@
               "key_code": "1",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -49,14 +42,7 @@
               "key_code": "2",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -83,14 +69,7 @@
               "key_code": "3",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -117,14 +96,7 @@
               "key_code": "4",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -151,14 +123,7 @@
               "key_code": "5",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -185,14 +150,7 @@
               "key_code": "6",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -219,14 +177,7 @@
               "key_code": "7",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -253,14 +204,7 @@
               "key_code": "8",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -287,14 +231,7 @@
               "key_code": "9",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -321,14 +258,7 @@
               "key_code": "0",
               "modifiers": [
                 "left_control"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -356,14 +286,7 @@
               "modifiers": [
                 "left_control",
                 "left_option"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
@@ -391,14 +314,7 @@
               "modifiers": [
                 "left_control",
                 "left_option"
-              ],
-              "repeat": true
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
+              ]
             }
           ],
           "conditions": [
