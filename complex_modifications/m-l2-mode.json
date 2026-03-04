@@ -1,0 +1,504 @@
+{
+  "title": "m-l2-mode",
+  "rules": [
+    {
+      "description": "（m-l2-mode）第二层预留模式（a-z 占位，后续补充）",
+      "manipulators": [
+        {
+          "description": "L2 + a（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "a"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + b（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "b"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + c（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "c"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + d（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "d"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + e（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "e"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + f（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "f"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + g（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "g"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + h（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "h"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + i（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "i"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + j（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "j"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + k（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "k"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + l（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "l"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + m（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "m"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + n（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "n"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + o（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "o"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + p（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "p"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + q（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "q"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + r（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "r"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + s（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "s"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + t（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "t"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + u（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "u"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + v（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "v"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + w（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "w"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + x（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "x"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + y（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "y"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "description": "L2 + z（预留，占位）",
+          "type": "basic",
+          "from": {
+            "key_code": "z"
+          },
+          "to": [
+            {
+              "key_code": "vk_none"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "lwm_caps_lock",
+              "value": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
