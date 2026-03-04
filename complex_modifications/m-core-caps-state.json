@@ -2,10 +2,10 @@
   "title": "m-core-caps-state",
   "rules": [
     {
-      "description": "（m-core-caps-state）模式切换：Caps 切换主层，L1+Space 进入第二层模式，Esc 退出",
+      "description": "（m-core-caps-state）Caps 按住进入 L1，L1+Space 按住进入 L2，Caps 弹起清空状态",
       "manipulators": [
         {
-          "description": "Caps：0 -> 1（进入第一层）",
+          "description": "Caps 按住：进入第一层；Caps 弹起：退出全部层",
           "type": "basic",
           "from": {
             "key_code": "caps_lock",
@@ -15,7 +15,10 @@
               ]
             }
           },
-          "to": [
+          "parameters": {
+            "basic.to_if_held_down_threshold_milliseconds": 1
+          },
+          "to_if_held_down": [
             {
               "set_variable": {
                 "name": "lwm_caps_lock",
@@ -24,34 +27,7 @@
             },
             {
               "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "lwm_caps_lock",
-              "value": 0
-            }
-          ]
-        },
-        {
-          "description": "Caps：1/2 -> 0（退出全部层）",
-          "type": "basic",
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "lwm_caps_lock",
+                "name": "lwm_l2_hold",
                 "value": 0
               }
             },
@@ -62,28 +38,16 @@
               }
             }
           ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "lwm_caps_lock",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "caps_lock",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
+          "to_after_key_up": [
             {
               "set_variable": {
                 "name": "lwm_caps_lock",
+                "value": 0
+              }
+            },
+            {
+              "set_variable": {
+                "name": "lwm_l2_hold",
                 "value": 0
               }
             },
@@ -93,17 +57,10 @@
                 "value": 0
               }
             }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "lwm_caps_lock",
-              "value": 2
-            }
           ]
         },
         {
-          "description": "L1 + Space：进入第二层（预留模式）",
+          "description": "L1 + Space 按住：进入第二层；Space 弹起：返回第一层",
           "type": "basic",
           "from": {
             "key_code": "spacebar"
@@ -111,13 +68,15 @@
           "to": [
             {
               "set_variable": {
-                "name": "lwm_caps_lock",
-                "value": 2
+                "name": "lwm_l2_hold",
+                "value": 1
               }
-            },
+            }
+          ],
+          "to_after_key_up": [
             {
               "set_variable": {
-                "name": "lwm_cl_key_m",
+                "name": "lwm_l2_hold",
                 "value": 0
               }
             }
@@ -127,62 +86,6 @@
               "type": "variable_if",
               "name": "lwm_caps_lock",
               "value": 1
-            }
-          ]
-        },
-        {
-          "description": "Esc：退出第一层",
-          "type": "basic",
-          "from": {
-            "key_code": "escape"
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "lwm_caps_lock",
-                "value": 0
-              }
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "lwm_caps_lock",
-              "value": 1
-            }
-          ]
-        },
-        {
-          "description": "Esc：退出第二层",
-          "type": "basic",
-          "from": {
-            "key_code": "escape"
-          },
-          "to": [
-            {
-              "set_variable": {
-                "name": "lwm_caps_lock",
-                "value": 0
-              }
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
-            }
-          ],
-          "conditions": [
-            {
-              "type": "variable_if",
-              "name": "lwm_caps_lock",
-              "value": 2
             }
           ]
         }

@@ -19,7 +19,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -38,7 +43,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -57,7 +67,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -76,7 +91,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -95,7 +115,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -114,7 +139,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -133,7 +163,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -152,7 +187,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -171,7 +211,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -190,7 +235,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -209,7 +259,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -228,7 +283,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -247,7 +307,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -266,7 +331,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -285,7 +355,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -304,7 +379,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -323,7 +403,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -342,7 +427,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -361,7 +451,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -380,7 +475,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -399,7 +499,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -418,7 +523,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -437,7 +547,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -456,7 +571,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -475,7 +595,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         },
@@ -494,7 +619,12 @@
             {
               "type": "variable_if",
               "name": "lwm_caps_lock",
-              "value": 2
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "lwm_l2_hold",
+              "value": 1
             }
           ]
         }

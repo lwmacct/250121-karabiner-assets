@@ -2,22 +2,23 @@
 
 ## 多层状态机设计
 
-本配置基于 CapsLock 键实现了一个多层状态机系统，使用单一变量 `lwm_caps_lock` 管理所有状态：
+本配置基于 CapsLock 键实现多层状态机，核心变量为 `lwm_caps_lock`（L1）和 `lwm_l2_hold`（L2）：
 
 ### 状态定义
 
-| lwm_caps_lock | 状态   | 触发条件              | 按键行为                             |
-| ------------- | ------ | --------------------- | ------------------------------------ |
-| 0             | 普通   | 默认                  | 正常输入                             |
-| 1             | 第一层 | CapsLock 切换进入     | 光标、桌面、Tab 切换等               |
-| 2             | 第二层 | 第一层 + Space        | 预留模式（a-z 待定义）               |
+| 条件 | 状态   | 触发条件 | 按键行为 |
+| ---- | ------ | -------- | -------- |
+| `lwm_caps_lock = 0` | 普通   | 默认 | 正常输入 |
+| `lwm_caps_lock = 1` 且 `lwm_l2_hold = 0` | 第一层 | CapsLock 按住 | 光标、桌面、Tab 切换等 |
+| `lwm_caps_lock = 1` 且 `lwm_l2_hold = 1` | 第二层 | 第一层按住 Space | 预留模式（a-z 待定义） |
 
 ### 核心文件
 
 - **m-core-caps-state.json** - 核心配置：
-  - CapsLock 在 `0/1/2` 间实现「进入第一层 / 退出全部层」切换
-  - 第一层 + Space → `lwm_caps_lock = 2`（进入第二层/预留模式）
-  - Esc（在任意层）→ `lwm_caps_lock = 0`（退出全部层）
+  - CapsLock 按住 → `lwm_caps_lock = 1`（进入第一层）
+  - 第一层按住 Space → `lwm_l2_hold = 1`（进入第二层预留模式）
+  - Space 弹起 → `lwm_l2_hold = 0`（回到第一层）
+  - CapsLock 弹起 → 清空所有层状态（`lwm_caps_lock = 0`, `lwm_l2_hold = 0`）
 - **m-l1-navigation.json** - 第一层导航映射（光标/Tab/窗口磁贴）
 - **m-l2-mode.json** - 第二层预留映射（a-z）
 - **m-map-input-toggle.json** - 输入法切换映射：
@@ -27,21 +28,23 @@
 
 ```
 按下 CapsLock:
-├── 0 -> 1（进入第一层）
-└── 1/2 -> 0（退出全部层）
+└── 进入第一层（lwm_caps_lock = 1）
 
 第一层中:
-└── Space -> 2（进入第二层预留模式）
+└── 按住 Space -> 第二层（lwm_l2_hold = 1）
 
-任意层中:
-└── Esc -> 0（退出全部层）
+释放 Space:
+└── 返回第一层（lwm_l2_hold = 0）
+
+释放 CapsLock:
+└── 退出全部层（lwm_caps_lock = 0, lwm_l2_hold = 0）
 ```
 
 ---
 
 ## 按键速查表
 
-### 第一层 (CapsLock 切换进入)
+### 第一层 (CapsLock 按住)
 
 #### 光标定位 (m-l1-navigation.json)
 
@@ -86,7 +89,7 @@
 | ---- | ----------------------- | ----------------------------------------- |
 | m    | 最大化窗口 / 自定义窗口 | Ctrl + Option + Enter / Ctrl + Option + M |
 
-### 第二层 (第一层 + Space)
+### 第二层 (第一层按住 Space)
 
 #### 预留模式 (m-l2-mode.json)
 
