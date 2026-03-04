@@ -15,14 +15,14 @@
 
 ### 核心文件
 
-- **lwm-cl-caps_lock.json** - 核心配置：
+- **m-core-caps-state.json** - 核心配置：
   - CapsLock 单击按住 → `lwm_caps_lock = 1`（进入第一层）
   - CapsLock 松开 → `lwm_caps_lock = 0`（退出所有层）
   - 300ms 内双击 CapsLock 并按住 → `lwm_caps_lock = 2`（进入第二层/tmux）
   - 第一层 + b → `lwm_caps_lock = 2`（进入第二层/tmux，类似 Ctrl+B 前缀）
   - 第一层 + Space → `lwm_caps_lock = 3`（进入第三层/系统控制）
   - 第二层/第三层重复按触发键 → 保持当前层（拦截输出）
-- **lwm-map-other.json** - 其他映射：
+- **m-map-input-toggle.json** - 其他映射：
   - Left Shift 单击（按下后立即松开）→ `Ctrl + Space`
 
 ### 双击检测原理
@@ -52,7 +52,7 @@
 
 ### 第一层 (CapsLock 按住)
 
-#### 光标定位 (lwm-cl-cursor.json)
+#### 光标定位 (m-l1-cursor.json)
 
 | 按键 | 功能       | 等效按键  |
 | ---- | ---------- | --------- |
@@ -65,7 +65,7 @@
 | u    | 向左选中   | Shift + ← |
 | o    | 向右选中   | Shift + → |
 
-#### 桌面切换 (lwm-cl-desktop.json)
+#### 桌面切换 (m-l1-desktop.json)
 
 | 按键 | 功能    | 等效按键          |
 | ---- | ------- | ----------------- |
@@ -82,14 +82,14 @@
 | c    | 桌面 11 | Ctrl + Option + 1 |
 | v    | 桌面 12 | Ctrl + Option + 2 |
 
-#### Tab 切换 (lwm-cl-tab_toggle.json)
+#### Tab 切换 (m-l1-tab-switch.json)
 
 | 按键 | 功能       | 等效按键           |
 | ---- | ---------- | ------------------ |
 | .    | 下一个 Tab | Ctrl + Tab         |
 | ,    | 上一个 Tab | Ctrl + Shift + Tab |
 
-#### 窗口磁贴 (lwm-cl-magnet.json)
+#### 窗口磁贴 (m-l1-window-tiling.json)
 
 | 按键 | 功能                    | 等效按键                                  |
 | ---- | ----------------------- | ----------------------------------------- |
@@ -99,7 +99,7 @@
 
 > 💡 类似 tmux 的 `Ctrl+B` 前缀模式
 
-#### tmux 操作 (lwm-cl-tmux.json)
+#### tmux 操作 (m-l2-tmux.json)
 
 **窗口管理**
 
@@ -134,7 +134,7 @@
 
 ### 第三层 (第一层 + Space)
 
-#### 系统控制 (lwm-cl-system.json)
+#### 系统控制 (m-l3-system-media.json)
 
 **音量控制**
 
@@ -159,7 +159,7 @@
 | .    | 亮度增加 |
 | ,    | 亮度减少 |
 
-### 其他映射 (lwm-map-other.json)
+### 其他映射 (m-map-input-toggle.json)
 
 | 按键            | 功能     | 等效按键     |
 | --------------- | -------- | ------------ |

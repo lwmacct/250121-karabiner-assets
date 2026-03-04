@@ -1,8 +1,8 @@
 {
-  "title": "lwm-cl-cursor",
+  "title": "m-l1-cursor",
   "rules": [
     {
-      "description": "(lwm-cl-cursor) [ikjl] 上下左右",
+      "description": "（m-l1-cursor）第一层 [ikjl] 上下左右",
       "manipulators": [
         {
           "description": "方向键上",
@@ -10,7 +10,9 @@
           "from": {
             "key_code": "i",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
@@ -32,7 +34,9 @@
           "from": {
             "key_code": "k",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
@@ -54,7 +58,9 @@
           "from": {
             "key_code": "j",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
@@ -76,7 +82,9 @@
           "from": {
             "key_code": "l",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
@@ -95,7 +103,7 @@
       ]
     },
     {
-      "description": "(lwm-cl-cursor) [hn] 行首行尾",
+      "description": "（m-l1-cursor）第一层 [hn] 行首行尾",
       "manipulators": [
         {
           "description": "移动到行首",
@@ -103,13 +111,17 @@
           "from": {
             "key_code": "h",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": ["left_command"]
+              "modifiers": [
+                "left_command"
+              ]
             }
           ],
           "conditions": [
@@ -126,13 +138,17 @@
           "from": {
             "key_code": "n",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": ["left_command"]
+              "modifiers": [
+                "left_command"
+              ]
             }
           ],
           "conditions": [
@@ -146,7 +162,7 @@
       ]
     },
     {
-      "description": "(lwm-cl-cursor) [uo] 左右选中",
+      "description": "（m-l1-cursor）第一层 [uo] 左右选中",
       "manipulators": [
         {
           "description": "向左选中",
@@ -154,13 +170,17 @@
           "from": {
             "key_code": "u",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": ["left_shift"]
+              "modifiers": [
+                "left_shift"
+              ]
             }
           ],
           "conditions": [
@@ -177,13 +197,17 @@
           "from": {
             "key_code": "o",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": ["left_shift"]
+              "modifiers": [
+                "left_shift"
+              ]
             }
           ],
           "conditions": [

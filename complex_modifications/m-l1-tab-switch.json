@@ -1,22 +1,26 @@
 {
-  "title": "lwm-cl-tab_toggle",
+  "title": "m-l1-tab-switch",
   "rules": [
     {
-      "description": "(lwm-cl-tab_toggle) Tab 切换",
+      "description": "（m-l1-tab-switch）第一层 Tab 切换（.,）",
       "manipulators": [
         {
-          "description": "下一个",
+          "description": "下一个（.）",
           "type": "basic",
           "from": {
             "key_code": "period",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
             {
               "key_code": "tab",
-              "modifiers": ["left_control"]
+              "modifiers": [
+                "left_control"
+              ]
             }
           ],
           "conditions": [
@@ -28,18 +32,23 @@
           ]
         },
         {
-          "description": "上一个",
+          "description": "上一个（,）",
           "type": "basic",
           "from": {
             "key_code": "comma",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
             {
               "key_code": "tab",
-              "modifiers": ["left_control", "left_shift"]
+              "modifiers": [
+                "left_control",
+                "left_shift"
+              ]
             }
           ],
           "conditions": [

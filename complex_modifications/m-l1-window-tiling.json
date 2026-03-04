@@ -1,22 +1,27 @@
 {
-  "title": "lwm-cl-magnet",
+  "title": "m-l1-window-tiling",
   "rules": [
     {
-      "description": "(lwm-cl-magnet) 窗口磁贴 最大化/自定义",
+      "description": "（m-l1-window-tiling）第一层窗口磁贴（m 键二段切换）",
       "manipulators": [
         {
-          "description": "cl+m (最大化窗口)",
+          "description": "cl+m（首次：最大化窗口）",
           "type": "basic",
           "from": {
             "key_code": "m",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
             {
               "key_code": "return_or_enter",
-              "modifiers": ["left_control", "left_option"]
+              "modifiers": [
+                "left_control",
+                "left_option"
+              ]
             },
             {
               "set_variable": {
@@ -39,18 +44,23 @@
           ]
         },
         {
-          "description": "cl+m (自定义窗口)",
+          "description": "cl+m（再次：自定义窗口）",
           "type": "basic",
           "from": {
             "key_code": "m",
             "modifiers": {
-              "optional": ["any"]
+              "optional": [
+                "any"
+              ]
             }
           },
           "to": [
             {
               "key_code": "m",
-              "modifiers": ["left_control", "left_option"]
+              "modifiers": [
+                "left_control",
+                "left_option"
+              ]
             },
             {
               "set_variable": {
