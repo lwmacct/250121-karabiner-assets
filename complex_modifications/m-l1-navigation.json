@@ -118,9 +118,7 @@
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": [
-                "left_command"
-              ]
+              "modifiers": ["left_command"]
             }
           ],
           "conditions": [
@@ -145,9 +143,7 @@
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": [
-                "left_command"
-              ]
+              "modifiers": ["left_command"]
             }
           ],
           "conditions": [
@@ -177,9 +173,7 @@
           "to": [
             {
               "key_code": "left_arrow",
-              "modifiers": [
-                "left_shift"
-              ],
+              "modifiers": ["left_shift"],
               "repeat": true
             }
           ],
@@ -205,9 +199,7 @@
           "to": [
             {
               "key_code": "right_arrow",
-              "modifiers": [
-                "left_shift"
-              ],
+              "modifiers": ["left_shift"],
               "repeat": true
             }
           ],
@@ -238,9 +230,7 @@
           "to": [
             {
               "key_code": "tab",
-              "modifiers": [
-                "left_control"
-              ]
+              "modifiers": ["left_control"]
             }
           ],
           "conditions": [
@@ -265,10 +255,7 @@
           "to": [
             {
               "key_code": "tab",
-              "modifiers": [
-                "left_control",
-                "left_shift"
-              ]
+              "modifiers": ["left_control", "left_shift"]
             }
           ],
           "conditions": [
@@ -297,11 +284,8 @@
           },
           "to": [
             {
-              "key_code": "return_or_enter",
-              "modifiers": [
-                "left_control",
-                "left_option"
-              ]
+              "key_code": "m",
+              "modifiers": ["left_control", "left_option", "left_command"]
             },
             {
               "set_variable": {
@@ -336,11 +320,8 @@
           },
           "to": [
             {
-              "key_code": "m",
-              "modifiers": [
-                "left_control",
-                "left_option"
-              ]
+              "key_code": "n",
+              "modifiers": ["left_control", "left_option", "left_command"]
             },
             {
               "set_variable": {
