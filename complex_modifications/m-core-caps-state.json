@@ -30,12 +30,6 @@
                 "name": "lwm_l2_hold",
                 "value": 0
               }
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
-                "value": 0
-              }
             }
           ],
           "to_after_key_up": [
@@ -48,12 +42,6 @@
             {
               "set_variable": {
                 "name": "lwm_l2_hold",
-                "value": 0
-              }
-            },
-            {
-              "set_variable": {
-                "name": "lwm_cl_key_m",
                 "value": 0
               }
             }
